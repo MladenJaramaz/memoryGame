@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+header {
+    background-color: darkolivegreen;
+    box-shadow: 0 0 20px;
+    padding: 10px;
+
+    h1 {
+        text-align: center;
+
+        a {
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+
+main {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 750px;
+
+    .container-fluid {
+        height: 100%;
+
+        .row {
+            height: 100%;
+
+            #gameArea {
+                border: 1px solid transparent;
+                height: 100%;
+
+                .board1,
+                .board2,
+                .board3,
+                .board4
+                    {
+                    box-shadow: 3px 3px 12px;
+                    width: 500px;
+                    height: 500px;
+
+                    .box {
+
+                        border-right: 1px solid black;
+                        border-bottom: 1px solid black;
+                        width: 25%;
+                        height: 25%;
+                        float: left;
+                        position: relative;
+                        cursor: pointer;
+
+                        .front {
+                            width: 100%;
+                            height: 100%;
+                            background-color: darkgoldenrod;
+                            transform: perspective(900px) rotateY(0);
+                            backface-visibility: hidden;
+                            transition: all .7s;
+                        }
+
+                        .back {
+                            width: 100%;
+                            height: 100%;
+                            background-color: maroon;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            text-align: center;
+                            line-height: 150px;
+                            transform: perspective(900px) rotateY(180deg);
+                            backface-visibility: hidden;
+                            transition: all .7s;
+                            // z-index: 999;
+
+                            i {
+                                color: white;
+                                font-size: 50px;
+                            }
+                        }
+                    }
+                }
+
+                .board1 {
+                    margin: 125px auto;
+                }
+
+                .board2 {
+                    float: left;
+                    margin: 125px 65px;
+                }
+
+                .board3 {
+                    width: 650px;
+                    height: 650px;
+                    box-shadow: 5px 5px 18px;
+                    margin: 50px auto;
+
+                    .box {
+                        width: 12.474%;
+                        height: 12.474%;
+                        
+
+                        .back {
+                            line-height: 91.25px;
+
+                            i {
+                                color: white;
+                                font-size: 35px;
+                            }
+                        }
+                    }
+                }
+
+                .board4 {
+                    width: 350px;
+                    height: 350px;
+                    margin: 225px 20px 50px 50px;
+                    float: left;
+
+                    .box {
+                        width: 24.9%;
+                        height: 24.9%;
+
+                        .back {
+                            line-height: 105px;
+
+                            i {
+                                color: white;
+                                font-size: 42px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #levelNo {
+                height: 50px;
+                width: 120px;
+                margin: 0 auto 10px;
+                background-color: maroon;
+                box-shadow: 4px 4px 20px;
+                font-weight: 600;
+                text-align: center;
+                line-height: 50px;
+                position: relative;
+            }
+
+            #stopwatchArea {
+                height: 100%;
+
+                #timeLimit,
+                #timeElapsed {
+                    font-weight: 700;
+                    font-size: 18px;
+                    position: absolute;
+                    left: 20px;
+                }
+
+                #timeLimit {
+                    top: 13%;
+                }
+
+                #timeElapsed {
+                    top: 60%;
+                }
+
+                #stopwatchFrame {
+                    height: 650px;
+                    width: 70%;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    border: 4px solid black;
+                    box-shadow: 0 0 20px;
+                    overflow: hidden;
+
+
+
+                    #stopwatch {
+                        background-color: darkgreen;
+                        width: 100%;
+                        height: 0px;
+                        position: absolute;
+                        top: 642px;
+                    }
+                }
+            }
+        }
+    }
+}
